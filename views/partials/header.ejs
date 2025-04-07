@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <%- include('./meta') %>
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/theme.css">
   <% if (locals.pageClass) { %>
     <link rel="stylesheet" href="/css/<%= pageClass.split('-')[0] %>.css">
   <% } %>
   <title><%= title %></title>
 </head>
-<body class="<%= locals.pageClass || '' %>">
+<body data-theme="dark" class="<%= locals.pageClass || '' %>">
   <header class="site-header">
     <div class="container">
       <a href="/" class="logo">Madison</a>
