@@ -20,12 +20,31 @@
     
     <div class="opera-gallery">
       <h2>Production Gallery</h2>
-      <div class="gallery-grid">
-        <% opera.gallery.forEach((image, index) => { %>
-          <div class="gallery-item">
-            <img src="<%= image %>" alt="<%= opera.title %> - Image <%= index + 1 %>">
-          </div>
-        <% }); %>
+      
+      <!-- Simple Slideshow Container -->
+      <div id="gallerySlideshow" class="gallery-slideshow">
+        <div class="gallery-slides">
+          <% opera.gallery.forEach((image, index) => { %>
+            <% if (index === 0) { %>
+              <div class="gallery-slide visible">
+            <% } else { %>
+              <div class="gallery-slide hidden">
+            <% } %>
+                <img src="<%= image %>" alt="<%= opera.title %> - Image <%= index + 1 %>">
+              </div>
+          <% }); %>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <button class="gallery-nav gallery-prev">&laquo;</button>
+        <button class="gallery-nav gallery-next">&raquo;</button>
+        
+        <!-- Indicators -->
+        <div class="gallery-indicators">
+          <% opera.gallery.forEach((_, index) => { %>
+            <span class="gallery-dot <%= index === 0 ? 'active' : '' %>" data-slide="<%= index %>"></span>
+          <% }); %>
+        </div>
       </div>
     </div>
     

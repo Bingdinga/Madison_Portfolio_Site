@@ -1,9 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('Opera slideshow script loaded');
+  
   // Simple Gallery Slideshow
   const slideshow = document.getElementById('gallerySlideshow');
   
   // If no slideshow element exists, exit
-  if (!slideshow) return;
+  if (!slideshow) {
+    console.log('No slideshow found');
+    return;
+  }
   
   const slides = slideshow.querySelectorAll('.gallery-slide');
   const dots = slideshow.querySelectorAll('.gallery-dot');
@@ -11,27 +16,42 @@ document.addEventListener('DOMContentLoaded', function() {
   const nextBtn = slideshow.querySelector('.gallery-next');
   
   // If no slides, exit
-  if (!slides.length) return;
+  if (!slides.length) {
+    console.log('No slides found');
+    return;
+  }
+  
+  console.log(`Found ${slides.length} slides`);
   
   let currentSlide = 0;
   let slideInterval;
   
   // Function to show a specific slide
   function showSlide(n) {
-    // Hide all slides
-    slides.forEach(slide => slide.style.display = 'none');
-    
-    // Remove active class from all dots
-    dots.forEach(dot => dot.classList.remove('active'));
-    
     // Calculate the correct slide index with wrapping
     currentSlide = (n + slides.length) % slides.length;
     
-    // Show the current slide
-    slides[currentSlide].style.display = 'block';
+    // Update slide visibility
+    slides.forEach((slide, i) => {
+      if (i === currentSlide) {
+        slide.classList.add('visible');
+        slide.classList.remove('hidden');
+      } else {
+        slide.classList.add('hidden');
+        slide.classList.remove('visible');
+      }
+    });
     
-    // Add active class to current dot
-    dots[currentSlide].classList.add('active');
+    // Update dot indicators
+    dots.forEach((dot, i) => {
+      if (i === currentSlide) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+    
+    console.log(`Showing slide ${currentSlide + 1} of ${slides.length}`);
   }
   
   // Initialize slideshow
@@ -50,23 +70,27 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Click handlers for previous and next buttons
-  prevBtn.addEventListener('click', () => {
-    stopSlideshow();
-    showSlide(currentSlide - 1);
-    startSlideshow();
-  });
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      stopSlideshow();
+      showSlide(currentSlide - 1);
+      startSlideshow();
+    });
+  }
   
-  nextBtn.addEventListener('click', () => {
-    stopSlideshow();
-    showSlide(currentSlide + 1);
-    startSlideshow();
-  });
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      stopSlideshow();
+      showSlide(currentSlide + 1);
+      startSlideshow();
+    });
+  }
   
   // Click handlers for the dots
-  dots.forEach(dot => {
+  dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
       stopSlideshow();
-      showSlide(parseInt(dot.getAttribute('data-slide')));
+      showSlide(index);
       startSlideshow();
     });
   });
