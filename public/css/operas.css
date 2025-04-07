@@ -1,0 +1,101 @@
+.operas-hero {
+    background-color: #F8F9FA;
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .operas-hero h1 {
+    color: #9D0208;
+  }
+  
+  .operas-hero .subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .operas-grid {
+    padding: 60px 0;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .opera-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .opera-card.animate {
+    animation: fadeIn 0.6s forwards;
+  }
+  
+  .opera-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .opera-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .opera-image {
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .opera-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .opera-card:hover .opera-image img {
+    transform: scale(1.05);
+  }
+  
+  .opera-card-content {
+    padding: 20px;
+  }
+  
+  .opera-card-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .opera-card-content .composer {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 5px;
+  }
+  
+  .opera-card-content .venue {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }

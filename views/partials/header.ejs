@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./meta') %>
+  <link rel="stylesheet" href="/css/main.css">
+  <% if (locals.pageClass) { %>
+    <link rel="stylesheet" href="/css/<%= pageClass.split('-')[0] %>.css">
+  <% } %>
+  <title><%= title %></title>
+</head>
+<body class="<%= locals.pageClass || '' %>">
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">Madison</a>
+      <%- include('./navigation') %>
+    </div>
+  </header>
+  <main>

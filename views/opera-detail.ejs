@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+
+<article class="opera-detail">
+  <div class="container">
+    <div class="opera-header">
+      <h1><%= opera.title %></h1>
+      <p class="composer">Composed by <%= opera.composer %></p>
+      <p class="production-info"><%= opera.venue %>, <%= opera.year %></p>
+      <p class="role">Role: <%= opera.role %></p>
+    </div>
+    
+    <div class="opera-featured-image">
+      <img src="<%= opera.featuredImage %>" alt="<%= opera.title %>">
+    </div>
+    
+    <div class="opera-description">
+      <h2>About the Production</h2>
+      <p><%= opera.description %></p>
+    </div>
+    
+    <div class="opera-gallery">
+      <h2>Production Gallery</h2>
+      <div class="gallery-grid">
+        <% opera.gallery.forEach((image, index) => { %>
+          <div class="gallery-item">
+            <img src="<%= image %>" alt="<%= opera.title %> - Image <%= index + 1 %>">
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    
+    <% if (opera.reviews && opera.reviews.length > 0) { %>
+      <div class="reviews">
+        <h2>Reviews</h2>
+        <div class="reviews-list">
+          <% opera.reviews.forEach(review => { %>
+            <blockquote class="review">
+              <p>"<%= review.quote %>"</p>
+              <cite>— <%= review.author %></cite>
+            </blockquote>
+          <% }); %>
+        </div>
+      </div>
+    <% } %>
+    
+    <div class="opera-nav">
+      <a href="/operas" class="btn secondary-btn">Back to All Operas</a>
+    </div>
+  </div>
+</article>
+
+<%- include('partials/footer') %>

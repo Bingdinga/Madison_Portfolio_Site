@@ -1,0 +1,77 @@
+[
+    {
+      "id": "la-boheme",
+      "title": "La Bohème",
+      "composer": "Giacomo Puccini",
+      "year": 2022,
+      "venue": "Metropolitan Opera House",
+      "description": "A passionate, timeless, and indelible story of love among young artists in Paris, has a special place in the repertoire because of its ability to communicate directly to audiences and move them to tears.",
+      "role": "Director",
+      "featuredImage": "PLACEHOLDER.png",
+      "gallery": [
+        "PLACEHOLDER.png",
+        "PLACEHOLDER.png",
+        "PLACEHOLDER.png"
+      ],
+      "reviews": [
+        {
+          "quote": "Innovative staging that brings new life to this classic opera.",
+          "author": "New York Times"
+        },
+        {
+          "quote": "Madison's vision for La Bohème is both respectful of tradition and refreshingly modern.",
+          "author": "Opera Today"
+        }
+      ]
+    },
+    {
+      "id": "don-giovanni",
+      "title": "Don Giovanni",
+      "composer": "Wolfgang Amadeus Mozart",
+      "year": 2021,
+      "venue": "Chicago Lyric Opera",
+      "description": "Mozart's masterpiece combines comedy, tragedy, and supernatural elements in a powerful exploration of morality and desire.",
+      "role": "Director",
+      "featuredImage": "PLACEHOLDER.png",
+      "gallery": [
+        "PLACEHOLDER.png",
+        "PLACEHOLDER.png",
+        "PLACEHOLDER.png"
+      ],
+      "reviews": [
+        {
+          "quote": "A bold, contemporary take on Mozart's complex masterpiece.",
+          "author": "Chicago Tribune"
+        },
+        {
+          "quote": "The production skillfully balances the opera's comedic and dramatic elements.",
+          "author": "Opera Wire"
+        }
+      ]
+    },
+    {
+      "id": "carmen",
+      "title": "Carmen",
+      "composer": "Georges Bizet",
+      "year": 2023,
+      "venue": "San Francisco Opera",
+      "description": "Bizet's passionate tale of the free-spirited Carmen has captivated audiences since its premiere with its sensuality and unforgettable music.",
+      "role": "Director",
+      "featuredImage": "PLACEHOLDER.png",
+      "gallery": [
+        "PLACEHOLDER.png",
+        "PLACEHOLDER.png",
+        "PLACEHOLDER.png"
+      ],
+      "reviews": [
+        {
+          "quote": "Madison's Carmen is a revelation - passionate, dangerous, and utterly compelling.",
+          "author": "San Francisco Chronicle"
+        },
+        {
+          "quote": "This production brings new depth to Bizet's characters and highlights the opera's feminist undertones.",
+          "author": "Classical Voice"
+        }
+      ]
+    }
+  ]

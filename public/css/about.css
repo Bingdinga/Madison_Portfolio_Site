@@ -1,0 +1,46 @@
+.about-hero {
+    padding: 60px 0;
+  }
+  
+  .about-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .about-image {
+    float: right;
+    width: 300px;
+    margin: 0 0 20px 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-text {
+    margin-top: 30px;
+  }
+  
+  .about-text h2 {
+    margin-top: 30px;
+    color: #9D0208;
+    font-size: 1.8rem;
+  }
+  
+  .about-text ul {
+    list-style-position: inside;
+    margin-bottom: 20px;
+  }
+  
+  .about-text li {
+    margin-bottom: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .about-image {
+      float: none;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto 30px;
+      display: block;
+    }
+  }

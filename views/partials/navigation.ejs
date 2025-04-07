@@ -1,0 +1,12 @@
+<nav class="main-nav">
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">
+      <span class="sr-only">Menu</span>
+      <span class="hamburger"></span>
+    </button>
+    <ul id="main-menu" class="nav-menu">
+      <li><a href="/" class="<%= locals.pageClass === 'home-page' ? 'active' : '' %>">Home</a></li>
+      <li><a href="/about" class="<%= locals.pageClass === 'about-page' ? 'active' : '' %>">About</a></li>
+      <li><a href="/operas" class="<%= locals.pageClass === 'operas-page' || locals.pageClass === 'opera-detail-page' ? 'active' : '' %>">Operas</a></li>
+      <li><a href="/contact" class="<%= locals.pageClass === 'contact-page' ? 'active' : '' %>">Contact</a></li>
+    </ul>
+  </nav>

@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+
+<section class="operas-hero">
+  <div class="container">
+    <h1>Directed Operas</h1>
+    <p class="subtitle">A selection of Madison's work as an opera director</p>
+  </div>
+</section>
+
+<section class="operas-grid">
+  <div class="container">
+    <div class="grid">
+      <% operas.forEach(opera => { %>
+        <article class="opera-card">
+          <a href="/operas/<%= opera.id %>" class="opera-link">
+            <div class="opera-image">
+              <img src="<%= opera.featuredImage %>" alt="<%= opera.title %>">
+            </div>
+            <div class="opera-card-content">
+              <h2><%= opera.title %></h2>
+              <p class="composer"><%= opera.composer %></p>
+              <p class="venue"><%= opera.venue %>, <%= opera.year %></p>
+            </div>
+          </a>
+        </article>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

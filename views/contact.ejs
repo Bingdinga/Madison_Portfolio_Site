@@ -1,0 +1,75 @@
+<%- include('partials/header') %>
+
+<section class="contact-hero">
+  <div class="container">
+    <h1>Contact Madison</h1>
+    <p class="subtitle">Get in touch for collaborations, bookings, or inquiries</p>
+  </div>
+</section>
+
+<section class="contact-form-section">
+  <div class="container">
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        <ul class="contact-details">
+          <li>
+            <span class="contact-label">Email:</span>
+            <a href="mailto:info@madisonoperadirector.com">info@madisonoperadirector.com</a>
+          </li>
+          <li>
+            <span class="contact-label">Representation:</span>
+            <p>Opera Artists Management<br>123 Broadway, Suite 456<br>New York, NY 10001</p>
+          </li>
+        </ul>
+        
+        <div class="social-links">
+          <h3>Connect Online</h3>
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">LinkedIn</a>
+          <a href="#" class="social-link">Twitter</a>
+        </div>
+      </div>
+      
+      <div class="form-container">
+        <% if (message) { %>
+          <div class="form-message success">
+            <%= message %>
+          </div>
+        <% } %>
+        
+        <% if (error) { %>
+          <div class="form-message error">
+            <%= error %>
+          </div>
+        <% } %>
+        
+        <form action="/contact" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject">
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn primary-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
