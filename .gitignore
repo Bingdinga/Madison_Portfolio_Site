@@ -27,6 +27,7 @@ npm-debug.log*
 *.ico
 *.webp
 public/img/**/*
+!public/img/**/.gitkeep
 
 # IDEs and editors
 .idea/
