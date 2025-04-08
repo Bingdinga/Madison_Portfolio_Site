@@ -22,7 +22,7 @@
 
 .about-text h2 {
   margin-top: 30px;
-  color: #9D0208;
+  color: #4ECDC4;
   font-size: 1.8rem;
 }
 
@@ -113,12 +113,12 @@
   transform: translateY(0);
 }
 
-/* Add dark mode specific styles */
-[data-theme="dark"] .document-card {
+
+.document-card {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-[data-theme="dark"] .document-card:hover {
+.document-card:hover {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 

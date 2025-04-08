@@ -1,11 +1,11 @@
 .contact-hero {
-  background-color: #F8F9FA;
+  background-color: #575757;
   padding: 60px 0;
   text-align: center;
 }
 
 .contact-hero h1 {
-  color: #9D0208;
+  color: #4ECDC4;
 }
 
 .contact-hero .subtitle {
@@ -33,14 +33,14 @@
   border-right: none;
 }
 
-[data-theme="dark"] .contact-info {
+.contact-info {
   background-color: var(--card-bg);
   border-color: #444;
 }
 
 .contact-info h2 {
   margin-bottom: 30px;
-  color: #9D0208;
+  color: #4ECDC4;
 }
 
 .contact-info h3 {
@@ -112,7 +112,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #9D0208;
+  border-color: #4ECDC4;
   box-shadow: 0 0 0 2px rgba(157, 2, 8, 0.2);
 }
 

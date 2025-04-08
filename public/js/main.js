@@ -11,33 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeToggleIcon = document.querySelector('.theme-toggle-icon');
-  const htmlRoot = document.documentElement;
-  const body = document.body;
-
-  // Function to set theme
-  function setTheme(theme) {
-    localStorage.setItem('theme', theme);
-    htmlRoot.setAttribute('data-theme', theme);
-    body.setAttribute('data-theme', theme);
-
-    // Update toggle icon
-    themeToggleIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
-  }
-
-  // Initialize theme (default to dark mode)
-  if (themeToggle) {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-
-    themeToggle.addEventListener('click', function () {
-      const currentTheme = htmlRoot.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      setTheme(newTheme);
-    });
-  }
-
   // Close menu when clicking outside
   document.addEventListener('click', function (event) {
     if (navMenu && navMenu.classList.contains('active') && !event.target.closest('.main-nav')) {

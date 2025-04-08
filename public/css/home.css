@@ -5,13 +5,13 @@
     align-items: center;
     text-align: center;
     padding: 80px 0;
-    background-color: #F8F9FA;
+    background-color: #575757;
   }
   
   .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 10px;
-    color: #9D0208;
+    color: #4ECDC4;
   }
   
   .hero .subtitle {
@@ -75,7 +75,7 @@
   
   /* Testimonials */
   .testimonials {
-    background-color: #F8F9FA;
+    background-color: #575757;
     padding: 80px 0;
     text-align: center;
   }

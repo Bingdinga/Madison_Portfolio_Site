@@ -8,7 +8,7 @@
 }
 
 .opera-header h1 {
-  color: #9D0208;
+  color: #4ECDC4;
   font-size: 2.5rem;
 }
 
@@ -172,12 +172,11 @@
   text-align: center;
 }
 
-/* Dark mode styles */
-[data-theme="dark"] .review {
+.review {
   background-color: #2d2d2d;
 }
 
-[data-theme="dark"] .gallery-slideshow {
+.gallery-slideshow {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
