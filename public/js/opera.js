@@ -57,62 +57,33 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize slideshow
   showSlide(0);
   
-  // Start automatic slideshow
-  function startSlideshow() {
-    slideInterval = setInterval(() => {
-      showSlide(currentSlide + 1);
-    }, 7000); // Change slide every 7 seconds
-  }
-  
-  // Stop automatic slideshow
-  function stopSlideshow() {
-    clearInterval(slideInterval);
-  }
-  
   // Click handlers for previous and next buttons
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
-      stopSlideshow();
       showSlide(currentSlide - 1);
-      startSlideshow();
     });
   }
   
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
-      stopSlideshow();
       showSlide(currentSlide + 1);
-      startSlideshow();
     });
   }
   
   // Click handlers for the dots
   dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
-      stopSlideshow();
       showSlide(index);
-      startSlideshow();
     });
   });
-  
-  // Pause slideshow when hovering over it
-  slideshow.addEventListener('mouseenter', stopSlideshow);
-  slideshow.addEventListener('mouseleave', startSlideshow);
-  
-  // Start the slideshow
-  startSlideshow();
   
   // Add keyboard navigation
   document.addEventListener('keydown', function(event) {
     if (event.key === 'ArrowLeft') {
-      stopSlideshow();
       showSlide(currentSlide - 1);
-      startSlideshow();
     }
     else if (event.key === 'ArrowRight') {
-      stopSlideshow();
       showSlide(currentSlide + 1);
-      startSlideshow();
     }
   });
 });
