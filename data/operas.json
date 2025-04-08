@@ -1,29 +1,5 @@
 [
   {
-    "id": "la-boheme",
-    "title": "La Bohème",
-    "composer": "Giacomo Puccini",
-    "year": 2022,
-    "venue": "Metropolitan Opera House",
-    "description": "A passionate, timeless, and indelible story of love among young artists in Paris, has a special place in the repertoire because of its ability to communicate directly to audiences and move them to tears.",
-    "role": "Director",
-    "featuredImage": "/img/operas/La_Boheme/La_Boheme_Main.JPG",
-    "gallery": [
-      "/img/operas/La_Boheme/La_Boheme_Gallery_1.JPEG",
-      "/img/operas/La_Boheme/La_Boheme_Gallery_2.JPEG"
-    ],
-    "reviews": [
-      {
-        "quote": "Innovative staging that brings new life to this classic opera.",
-        "author": "New York Times"
-      },
-      {
-        "quote": "Madison's vision for La Bohème is both respectful of tradition and refreshingly modern.",
-        "author": "Opera Today"
-      }
-    ]
-  },
-  {
     "id": "ghosts-of-versailles",
     "title": "The Ghosts of Versailles",
     "composer": "John Corigliano",
@@ -84,5 +60,30 @@
         "author": "Opera Magazine"
       }
     ]
+  },
+  {
+    "id": "la-boheme",
+    "title": "La Bohème",
+    "composer": "Giacomo Puccini",
+    "year": 2022,
+    "venue": "Metropolitan Opera House",
+    "description": "A passionate, timeless, and indelible story of love among young artists in Paris, has a special place in the repertoire because of its ability to communicate directly to audiences and move them to tears.",
+    "role": "Director",
+    "featuredImage": "/img/operas/La_Boheme/La_Boheme_Main.JPG",
+    "gallery": [
+      "/img/operas/La_Boheme/La_Boheme_Gallery_1.JPEG",
+      "/img/operas/La_Boheme/La_Boheme_Gallery_2.JPEG"
+    ],
+    "reviews": [
+      {
+        "quote": "Innovative staging that brings new life to this classic opera.",
+        "author": "New York Times"
+      },
+      {
+        "quote": "Madison's vision for La Bohème is both respectful of tradition and refreshingly modern.",
+        "author": "Opera Today"
+      }
+    ]
   }
+
 ]
