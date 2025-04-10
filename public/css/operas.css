@@ -1,0 +1,46 @@
+/* File exists for compatibility purposes, the naming conventions got confused. Easiest Band-Aid */
+
+/* Importing base styles from opera.css */
+@import url('opera.css');
+
+/* Additional styles specific to the operas page */
+.featured-works {
+  padding: 80px 0;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.featured-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.featured-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.featured-content {
+  padding: 20px;
+}
+
+.featured-content h3 {
+  margin-bottom: 5px;
+}
+
+.featured-content p {
+  color: #666;
+  margin-bottom: 15px;
+}

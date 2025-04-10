@@ -1,3 +1,4 @@
+// In controllers/operasController.js
 const fs = require('fs');
 const path = require('path');
 
@@ -5,9 +6,45 @@ const path = require('path');
 const getOperaData = () => {
   const filePath = path.join(__dirname, '../data/operas.json');
   const fileData = fs.readFileSync(filePath, 'utf8');
-  return JSON.parse(fileData);
+  const operas = JSON.parse(fileData);
+  
+  // Enhance opera data with dynamic image loading
+  operas.forEach(opera => {
+    const operaFolderName = opera.id.split('-').map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join('_');
+    
+    const operaImgPath = path.join(__dirname, '../public/img/operas', operaFolderName);
+    
+    // Check if directory exists
+    if (fs.existsSync(operaImgPath)) {
+      // Get all image files from the directory
+      const imageFiles = fs.readdirSync(operaImgPath)
+        .filter(file => {
+          const ext = path.extname(file).toLowerCase();
+          return ['.jpg', '.jpeg', '.png', '.gif', '.webp'].includes(ext);
+        })
+        .map(file => `/img/operas/${operaFolderName}/${file}`);
+      
+      // Find main image (usually has "Main" in the filename)
+      const mainImage = imageFiles.find(file => file.includes('Main')) || imageFiles[0];
+      
+      // Update opera object with dynamic images
+      opera.featuredImage = mainImage;
+      opera.gallery = imageFiles.filter(img => img !== mainImage);
+      
+      // If main image is first in gallery, move it to featuredImage
+      if (!mainImage && imageFiles.length > 0) {
+        opera.featuredImage = imageFiles[0];
+        opera.gallery = imageFiles.slice(1);
+      }
+    }
+  });
+  
+  return operas;
 };
 
+// The rest of the controller remains the same
 exports.getAllOperas = (req, res) => {
   try {
     const operas = getOperaData();

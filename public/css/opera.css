@@ -1,11 +1,20 @@
+/* Opera Pages Base Styles
+-------------------------------- */
+:root {
+  --slide-transition-speed: 0.3s;
+}
+
+/* Opera List Page Hero
+-------------------------------- */
 .operas-hero {
-  background-color: #F8F9FA;
+  background-color: var(--hero-bg);
   padding: 60px 0;
   text-align: center;
 }
 
+
 .operas-hero h1 {
-  color: #4ECDC4;
+  color: var(--link-color);
 }
 
 .operas-hero .subtitle {
@@ -14,93 +23,56 @@
   margin: 0 auto;
 }
 
-.operas-grid {
-  padding: 60px 0;
+/* Featured Works - copied from home.css
+-------------------------------- */
+.featured-works {
+  padding: 80px 0;
 }
 
-.grid {
+.featured-works h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.featured-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
 }
 
-.opera-card {
+.featured-item {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.opera-card.animate {
-  animation: fadeIn 0.6s forwards;
-}
-
-.opera-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.opera-card:hover {
+.featured-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.opera-image {
-  height: 200px;
-  overflow: hidden;
-}
-
-.opera-image img {
+.featured-item img {
   width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
-  transition: transform 0.5s ease;
 }
 
-.opera-card:hover .opera-image img {
-  transform: scale(1.05);
-}
-
-.opera-card-content {
+.featured-content {
   padding: 20px;
 }
 
-.opera-card-content h2 {
-  font-size: 1.5rem;
+.featured-content h3 {
   margin-bottom: 5px;
 }
 
-.opera-card-content .composer {
+.featured-content p {
   color: #666;
-  font-style: italic;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
-.opera-card-content .venue {
-  font-size: 0.9rem;
-  color: #777;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* Opera Detail Page
+-------------------------------- */
 .opera-detail {
   padding: 60px 0;
 }
@@ -111,7 +83,7 @@
 }
 
 .opera-header h1 {
-  color: #4ECDC4;
+  color: var(--link-color);
   font-size: 2.5rem;
 }
 
@@ -143,12 +115,13 @@
   margin-bottom: 30px;
 }
 
-/* NEW SLIDESHOW STYLES */
+/* Gallery Slideshow
+-------------------------------- */
 .gallery-slideshow {
   position: relative;
   width: 66.66%;
   margin: 0 auto 60px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -188,7 +161,7 @@
   cursor: pointer;
   font-size: 20px;
   line-height: 1;
-  transition: background-color 0.3s;
+  transition: background-color var(--slide-transition-speed);
   z-index: 2;
 }
 
@@ -224,21 +197,22 @@
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color var(--slide-transition-speed);
 }
 
 .gallery-dot.active {
   background-color: white;
 }
 
-/* Review Styles */
+/* Review Styles
+-------------------------------- */
 .reviews-list {
   max-width: 800px;
   margin: 0 auto 60px;
 }
 
 .review {
-  background-color: #F8F9FA;
+  background-color: var(--card-bg);
   padding: 30px;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -258,30 +232,21 @@
   text-align: center;
 }
 
-.review {
-  background-color: #2d2d2d;
-}
-
-.gallery-slideshow {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive styles */
-@media (max-width: 992px) {
-  .gallery-slideshow {
-    width: 80%;
-  }
-}
-
+/* Responsive styles - from home.css
+-------------------------------- */
 @media (max-width: 768px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .opera-header h1 {
     font-size: 2rem;
   }
-
+  
   .gallery-slideshow {
     width: 100%;
   }
-
+  
   .gallery-nav {
     padding: 10px;
     font-size: 16px;

@@ -2,27 +2,24 @@
 
 <section class="operas-hero">
   <div class="container">
-    <h1>Directed (?) Operas</h1>
+    <h1>Directed Operas</h1>
     <p class="subtitle">A selection of Madison's work in Opera</p>
   </div>
 </section>
 
-<section class="operas-grid">
+<section class="featured-works">
   <div class="container">
-    <div class="grid">
+    <h2>Opera Productions</h2>
+    <div class="featured-grid">
       <% operas.forEach(opera => { %>
-        <article class="opera-card">
-          <a href="/operas/<%= opera.id %>" class="opera-link">
-            <div class="opera-image">
-              <img src="<%= opera.featuredImage %>" alt="<%= opera.title %>">
-            </div>
-            <div class="opera-card-content">
-              <h2><%= opera.title %></h2>
-              <p>Include other attributes, i.e. the role Madison had, Director, Language, etc</p>
-              <p class="composer"><%= opera.composer %></p>
-              <p class="venue"><%= opera.venue %>, <%= opera.year %></p>
-            </div>
-          </a>
+        <article class="featured-item">
+          <img src="<%= opera.featuredImage %>" alt="<%= opera.title %>">
+          <div class="featured-content">
+            <h3><%= opera.title %></h3>
+            <p><%= opera.composer %></p>
+            <p><%= opera.venue %>, <%= opera.year %></p>
+            <a href="/operas/<%= opera.id %>" class="btn secondary-btn">View Details</a>
+          </div>
         </article>
       <% }); %>
     </div>
