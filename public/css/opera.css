@@ -8,36 +8,37 @@
 -------------------------------- */
 .operas-hero {
   background-color: var(--hero-bg);
-  padding: 60px 0;
+  padding: clamp(40px, 8vw, 60px) 0;
   text-align: center;
 }
 
-
 .operas-hero h1 {
   color: var(--link-color);
+  font-size: clamp(2rem, 5vw, 2.5rem);
 }
 
 .operas-hero .subtitle {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* Featured Works - copied from home.css
+/* Featured Works
 -------------------------------- */
 .featured-works {
-  padding: 80px 0;
+  padding: clamp(50px, 10vw, 80px) 0;
 }
 
 .featured-works h2 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: clamp(20px, 5vw, 40px);
+  font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
+  gap: clamp(15px, 4vw, 30px);
 }
 
 .featured-item {
@@ -59,46 +60,50 @@
 }
 
 .featured-content {
-  padding: 20px;
+  padding: clamp(15px, 3vw, 20px);
 }
 
 .featured-content h3 {
   margin-bottom: 5px;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
 }
 
 .featured-content p {
   color: #666;
-  margin-bottom: 15px;
+  margin-bottom: clamp(10px, 2vw, 15px);
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
 }
 
 /* Opera Detail Page
 -------------------------------- */
 .opera-detail {
-  padding: 60px 0;
+  padding: clamp(40px, 8vw, 60px) 0;
 }
 
 .opera-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: clamp(25px, 5vw, 40px);
 }
 
 .opera-header h1 {
   color: var(--link-color);
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
 }
 
 .opera-header .composer {
   font-style: italic;
-  margin-bottom: 10px;
+  margin-bottom: clamp(5px, 1vw, 10px);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
 }
 
 .opera-header .production-info,
 .opera-header .role {
   color: #555;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
 }
 
 .opera-featured-image {
-  margin-bottom: 40px;
+  margin-bottom: clamp(25px, 5vw, 40px);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -106,21 +111,32 @@
 
 .opera-description {
   max-width: 800px;
-  margin: 0 auto 60px;
+  margin: 0 auto clamp(40px, 8vw, 60px);
+}
+
+.opera-description h2 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  margin-bottom: clamp(15px, 3vw, 20px);
+}
+
+.opera-description p {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  margin-bottom: clamp(15px, 3vw, 20px);
 }
 
 .opera-gallery h2,
 .reviews h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: clamp(20px, 4vw, 30px);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
 }
 
 /* Gallery Slideshow
 -------------------------------- */
 .gallery-slideshow {
   position: relative;
-  width: 66.66%;
-  margin: 0 auto 60px;
+  width: clamp(280px, 66.66%, 800px);
+  margin: 0 auto clamp(40px, 8vw, 60px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   overflow: hidden;
@@ -154,12 +170,12 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding: 15px;
+  padding: clamp(10px, 2vw, 15px);
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: clamp(16px, 3vw, 20px);
   line-height: 1;
   transition: background-color var(--slide-transition-speed);
   z-index: 2;
@@ -182,7 +198,7 @@
 /* Indicators */
 .gallery-indicators {
   position: absolute;
-  bottom: 20px;
+  bottom: clamp(10px, 3vw, 20px);
   left: 0;
   right: 0;
   text-align: center;
@@ -191,8 +207,8 @@
 
 .gallery-dot {
   display: inline-block;
-  width: 12px;
-  height: 12px;
+  width: clamp(8px, 1.5vw, 12px);
+  height: clamp(8px, 1.5vw, 12px);
   margin: 0 5px;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
@@ -208,39 +224,43 @@
 -------------------------------- */
 .reviews-list {
   max-width: 800px;
-  margin: 0 auto 60px;
+  margin: 0 auto clamp(40px, 8vw, 60px);
 }
 
 .review {
   background-color: var(--card-bg);
-  padding: 30px;
+  padding: clamp(20px, 4vw, 30px);
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: clamp(15px, 3vw, 20px);
 }
 
 .review p {
   font-style: italic;
-  margin-bottom: 10px;
+  margin-bottom: clamp(5px, 2vw, 10px);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
 }
 
 .review cite {
   font-style: normal;
   font-weight: 600;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
 }
 
 .opera-nav {
   text-align: center;
 }
 
-/* Responsive styles - from home.css
+/* Responsive styles
 -------------------------------- */
+@media (max-width: 992px) {
+  .gallery-slideshow {
+    width: 80%;
+  }
+}
+
 @media (max-width: 768px) {
   .featured-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .opera-header h1 {
-    font-size: 2rem;
   }
   
   .gallery-slideshow {
@@ -248,14 +268,14 @@
   }
   
   .gallery-nav {
-    padding: 10px;
-    font-size: 16px;
+    padding: clamp(8px, 1.5vw, 10px);
+    font-size: clamp(14px, 2.5vw, 16px);
   }
 }
 
 @media (max-width: 480px) {
   .gallery-nav {
-    padding: 8px;
-    font-size: 14px;
+    padding: clamp(6px, 1vw, 8px);
+    font-size: clamp(12px, 2vw, 14px);
   }
 }
